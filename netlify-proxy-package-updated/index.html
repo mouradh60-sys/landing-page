@@ -51,8 +51,12 @@
     </section>
 
     <!-- Products grid -->
-    <section id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></section>
-  </main>
+    const PRODUCTS = [
+  { id:"p1", name:"بيجامة نسائية قطنية", price:2400, images:["images/p1-1.jpg"], desc:"..." },
+  { id:"p2", name:"بيجامة نسائية موديل 2", price:2700, images:["images/p2-1.jpg"], desc:"..." },
+  ...
+];
+
 
   <!-- ====== Cart drawer ====== -->
   <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
