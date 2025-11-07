@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ar">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>اختبار</title></head>
+<body>
+<h1>اختبار Netlify Proxy</h1>
+<form id="f"><input id="name" placeholder="name"/><input id="phone" placeholder="phone"/><button>Send</button></form>
+<div id="res"></div>
+<script>
+document.getElementById('f').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const payload = { name: document.getElementById('name').value, phone: document.getElementById('phone').value };
+  try {
+    const r = await fetch('/.netlify/functions/order', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    const data = await r.text();
+    document.getElementById('res').textContent = data;
+  } catch(err) {
+    document.getElementById('res').textContent = 'Error: '+err.message;
+  }
+});
+</script>
+</body>
+</html>
