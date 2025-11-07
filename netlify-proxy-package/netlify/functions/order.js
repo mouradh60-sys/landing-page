@@ -13,7 +13,7 @@ exports.handler = async function(event, context) {
     const body = event.body ? JSON.parse(event.body) : {};
 
     // Forward to Google Apps Script Web App
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbxZJo3Poxk0zFHCbjgQq7HKrYMo5KDqNvhJBPYl4Xyaqve0bcJ22-1UYNZORk1gmo4/exec";
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbyHsPSQI2U46lbSyztLAt5rMhxHqXOTZDinDl8cN6GkaZA4qYWXOWkXDALyxbYXsULm/exec";
 
     const resp = await fetch(GAS_URL, {
       method: "POST",
